@@ -50,8 +50,8 @@
     <div class="bg-image" style="background-image: url('gambar/561.png'); filter: contrast(100%); background-repeat: no-repeat; filter: brightness(60%); height: 100vh">
       <div class="head">
         <div class="text-white fullscreen justify-content-center">
-          <h1 class="display-3"><br /><br /><br /><br />Halooo, Perkenalkan</h1>
-          <h1 class="display-3">saya Ahmad Zakaria</h1>
+          <h1 class="display-3 me-3"><br /><br /><br /><br />Halooo, Perkenalkan</h1>
+          <h1 class="display-3 me-3">saya Ahmad Zakaria</h1>
           <br />
           <div class="ms-1 me-5">
             <p class="mb-0">Ini merupakan website pertama saya, saya buat memakai bootstrap 5 dan belum saya masukkan javascript</p>
@@ -71,8 +71,8 @@
             </div>
           </div>
           <div class="row justify-content-center px-3 fs-6">
-            <div class="col-md-5 mb-3">Nama saya Ahmad Zakaria biasa dipanggil Arya atau Zaka. Saya merupakan mahasiswa baru (2022) di salah satu perguruan tinggi negeri di Yogyakarta.</div>
-            <div class="col-md-5">
+            <div class="col-md-5 mb-3" style="text-align: justify">Nama saya Ahmad Zakaria biasa dipanggil Arya atau Zaka. Saya merupakan mahasiswa baru (2022) di salah satu perguruan tinggi negeri di Yogyakarta.</div>
+            <div class="col-md-5" style="text-align: justify">
               Website ini merupakan website pertama saya yang sementara ini saya buat menggunakan, HTML, CSS, Bootstrap5, dan sedikit Javascript. Halaman web ini berisi mengenai hal-hal yang ingin saya simpan seperti bookmark, playlist,
               bekas projek dan beberapa kali saya akan mengupload artikel
             </div>
@@ -122,9 +122,9 @@
             <div class="col-md-4 mb-3">
               <a href="subpage1.html" target="_blank">
                 <div class="card card-1">
-                  <img src="gambar/farm.jpg" class="card-img-top" alt="jendela1" />
+                  <img src="gambar/artikel.png" class="card-img-top" alt="jendela1" />
                   <div class="card-body">
-                    <p class="card-text">Berisi pengalaman saya saat bertani di tempat teman pada september tahun lalu (belum responsif)</p>
+                    <p class="card-text">Berisi mengenai pikiran-pikiran saya, saya tuang disini</p>
                   </div>
                 </div>
               </a>
@@ -196,15 +196,15 @@
               <form>
                 <div class="mb-3">
                   <label for="Nama" class="form-label">Nama</label>
-                  <input placeholder="Belum aktif" type="text" class="form-control" id="nama" aria-describedby="nama" />
+                  <input placeholder="Belum aktif" type="text" class="form-control" id="nama" aria-describedby="nama" required />
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
-                  <input placeholder="Belum aktif" type="email" class="form-control" id="email" aria-describedby="email" />
+                  <input placeholder="Belum aktif" type="email" class="form-control" id="email" aria-describedby="email" required />
                 </div>
                 <div class="mb-3">
                   <label for="pesan" class="form-label">Pesan</label>
-                  <textarea placeholder="Belum aktif" class="form-control" id="pesan" rows="3"></textarea>
+                  <textarea placeholder="Belum aktif" class="form-control" id="pesan" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-secondary mb-3">Kirim</button>
               </form>
@@ -214,22 +214,23 @@
       </section>
       <!-- Contact -->
       <!-- Footer -->
-      <div class="mt-5 pt-5 pb-5 footer">
+      <div class="mt-5 px-3 pt-5 pb-5 footer">
         <div class="container">
           <div class="row">
             <div class="col-lg-5 col-xs-12 about-company">
               <h2>Heading</h2>
-              <p class="pr-5 text-white-50">Haiiii, terimakasih sudah membaca sampai akhir. Saran kritik akan sangat saya terima, untuk memajukan web ini</p>
+              <p class="pr-5 text-white-50 mb-1">Haiiii, terimakasih sudah membaca sampai akhir. Saran kritik akan sangat saya terima, untuk memajukan web ini</p>
               <p>
                 <a href="https://www.facebook.com/profile.php?id=100008504131639" target="_blank"><i class="bi bi-facebook text-white"></i>&nbsp;&nbsp;</a>
                 <a href="https://github.com/Zachry2906" target="_blank"><i class="bi bi-github text-white"></i>&nbsp;&nbsp;</a>
-                <a href="https://www.instagram.com/zachry____/" target="_blank"><i class="bi bi-instagram text-white"></i></a>
+                <a href="https://www.instagram.com/zachry____/" target="_blank"><i class="bi bi-instagram text-white"></i></a><br />
               </p>
             </div>
             <div class="col-lg-3 col-xs-12 links">
               <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-              <ul class="m-0 p-0">
-                <li><a href="profile.html">My Profile</a></li>
+              <ul class="m-0 p-0" style="list-style: none">
+                <li style="text-decoration: none"><a href="profile.html">My Profile</a></li>
+                <br />
               </ul>
             </div>
             <div class="col-lg-4 col-xs-12 location">
