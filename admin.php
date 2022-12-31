@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,6 +49,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="logout.php">Logout</a>
             </li>
           </ul>
         </div>
@@ -180,6 +192,7 @@
               </a>
             </div>
           </div>
+          <button class="btn btn-secondary mb-3"><a href="tambahartikel.php"> Tambah artikel </a></button>
         </div>
       </section>
       <!-- Project -->
@@ -196,15 +209,15 @@
               <form>
                 <div class="mb-3">
                   <label for="Nama" class="form-label">Nama</label>
-                  <input placeholder="Belum aktif" type="text" class="form-control" id="nama" aria-describedby="nama" required />
+                  <input placeholder="Belum aktif" type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" required />
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
-                  <input placeholder="Belum aktif" type="email" class="form-control" id="email" aria-describedby="email" required />
+                  <input placeholder="Belum aktif" type="email"  name="email" class="form-control" id="email" aria-describedby="email" required />
                 </div>
                 <div class="mb-3">
                   <label for="pesan" class="form-label">Pesan</label>
-                  <textarea placeholder="Belum aktif" class="form-control" id="pesan" rows="3" required></textarea>
+                  <textarea placeholder="Belum aktif"  name="pesan" class="form-control" id="pesan" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-secondary mb-3">Kirim</button>
               </form>
