@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+require "function.php";
+
+$data = query("SELECT * FROM form");
+$konten = query("SELECT * FROM content");
+$sum = count(query("SELECT * FROM content"));
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;
@@ -59,7 +64,7 @@ if (!isset($_SESSION['login'])) {
     </nav>
     <!-- Navbar -->
     <!-- Background image -->
-    <div class="bg-image" style="background-image: url('gambar/561.png'); filter: contrast(100%); background-repeat: no-repeat; filter: brightness(60%); height: 100vh">
+    <div class="bg-image" style="background-image: url('gambar/561.png'); filter: contrast(100%); background-repeat: no-repeat; filter: brightness(60%); height: 100vh; background-size: cover">
       <div class="head">
         <div class="text-white fullscreen justify-content-center">
           <h1 class="display-3 me-3"><br /><br /><br /><br />Halooo, Perkenalkan</h1>
@@ -161,36 +166,21 @@ if (!isset($_SESSION['login'])) {
                 </div>
               </a>
             </div>
-            <div class="col-md-4 mb-3">
-              <a href="topik4.html" target="_blank">
+            <?php $j = 1; ?>
+            <?php foreach ($konten as $k) : ?>
+              <div class="col-md-4 mb-3">
+              <a href="topik<?=$j?>.html" target="_blank">
                 <div class="card">
-                  <img src="gambar/empty.png" class="card-img-top" alt="jendela4" />
+                   <button style="z-index: index 1 ; position: fixed;" name="card" class="btn btn-secondary mb-3"><a href="hapus.php?card=<?=$k["id"];?>">hapus</a></button>
+                  <img src="img/<?=$k["gambar"];?>" class="card-img-top" alt="jendela4" />
                   <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p style="position: relative; color:black;" class="card-text"><?= $k["sinopsis"]; ?></p>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-md-4 mb-3">
-              <a href="topik5.html" target="_blank">
-                <div class="card">
-                  <img src="gambar/empty.png" class="card-img-top" alt="jendela5" />
-                  <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 mb-3">
-              <a href="topik6.html" target="_blank">
-                <div class="card">
-                  <img src="gambar/empty.png" class="card-img-top" alt="jendela6" />
-                  <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
+            <?php $j++; ?>
+            <?php endforeach; ?>
           </div>
           <button class="btn btn-secondary mb-3"><a href="tambahartikel.php"> Tambah artikel </a></button>
         </div>
@@ -201,26 +191,37 @@ if (!isset($_SESSION['login'])) {
         <div class="container">
           <div class="row text-center px-2 mt-0">
             <div class="col">
-              <h2>Contact Me</h2>
+              <h2>Feedback</h2>
             </div>
           </div>
           <div class="row justify-content-center">
             <div class="col-md-7">
-              <form>
-                <div class="mb-3">
-                  <label for="Nama" class="form-label">Nama</label>
-                  <input placeholder="Belum aktif" type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" required />
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email address</label>
-                  <input placeholder="Belum aktif" type="email"  name="email" class="form-control" id="email" aria-describedby="email" required />
-                </div>
-                <div class="mb-3">
-                  <label for="pesan" class="form-label">Pesan</label>
-                  <textarea placeholder="Belum aktif"  name="pesan" class="form-control" id="pesan" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-secondary mb-3">Kirim</button>
-              </form>
+            <table class="table table-dark mx-auto">
+  <thead>
+    <tr style="border-radius: 10px;">
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php $i = 1; ?>
+    <?php foreach($data as $d): ?>
+    <tr>
+        <td><?= $i;?></td>
+        <td><?= $d["name"]; ?></td>
+        <td><?= $d["email"]; ?></td>
+        <td><?= $d["pesan"]; ?></td>
+        <td>                
+        <button type="button" class="btn btn-light btn-sm"><a href="hapus.php?id=<?=$d["id"];?>">hapus</a></button>
+        </td>
+    </tr>
+    <?php $i++; ?>
+    <?php endforeach; ?>
+  </tbody>
+</table>
             </div>
           </div>
         </div>

@@ -1,3 +1,24 @@
+<?php 
+
+require "function.php";
+
+$konten = query("SELECT * FROM content");
+$sum = count(query("SELECT * FROM content"));
+
+if (isset($_POST["submit"])) {
+  if(tambah($_POST) > 0) {
+    echo "<script>
+            alert('data berhasil diperbarui');
+            document.location.href = 'mywebsite.php';
+        </script>
+    ";
+}
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,7 +71,7 @@
     </nav>
     <!-- Navbar -->
     <!-- Background image -->
-    <div class="bg-image" style="background-image: url('gambar/561.png'); filter: contrast(100%); background-repeat: no-repeat; filter: brightness(60%); height: 100vh">
+    <div class="bg-image" style="background-image: url('gambar/561.png'); filter: contrast(100%); background-repeat: no-repeat; filter: brightness(60%); height: 100vh; background-size: cover">
       <div class="head">
         <div class="text-white fullscreen justify-content-center">
           <h1 class="display-3 me-3"><br /><br /><br /><br />Halooo, Perkenalkan</h1>
@@ -152,36 +173,20 @@
                 </div>
               </a>
             </div>
-            <div class="col-md-4 mb-3">
-              <a href="topik4.html" target="_blank">
+            <?php $j = 1; ?>
+            <?php foreach ($konten as $k) : ?>
+              <div class="col-md-4 mb-3">
+              <a href="topik<?=$j?>.html" target="_blank">
                 <div class="card">
-                  <img src="gambar/empty.png" class="card-img-top" alt="jendela4" />
+                  <img src="img/<?=$k["gambar"];?>" class="card-img-top" alt="jendela4" />
                   <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"><?= $k["sinopsis"]; ?></p>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-md-4 mb-3">
-              <a href="topik5.html" target="_blank">
-                <div class="card">
-                  <img src="gambar/empty.png" class="card-img-top" alt="jendela5" />
-                  <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 mb-3">
-              <a href="topik6.html" target="_blank">
-                <div class="card">
-                  <img src="gambar/empty.png" class="card-img-top" alt="jendela6" />
-                  <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
+            <?php $j++; ?>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>
@@ -196,7 +201,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-md-7">
-              <form>
+              <form action="" method="POST">
                 <div class="mb-3">
                   <label for="Nama" class="form-label">Nama</label>
                   <input placeholder="Belum aktif" type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" required />
@@ -209,7 +214,7 @@
                   <label for="pesan" class="form-label">Pesan</label>
                   <textarea placeholder="Belum aktif"  name="pesan" class="form-control" id="pesan" rows="3" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-secondary mb-3">Kirim</button>
+                <button name="submit" type="submit" class="btn btn-secondary mb-3">Kirim</button>
               </form>
             </div>
           </div>
