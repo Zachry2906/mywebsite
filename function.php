@@ -31,8 +31,9 @@ function isi ($konten){
 
     $sinopsis = $konten["sinopsis"];
     $gambar = $konten["gambar"];
-
-    $queryy = "INSERT INTO content VALUES ('', '$gambar', '$sinopsis')";
+    $file = $konten["file"];
+    $judul = $konten["judul"];
+    $queryy = "INSERT INTO content VALUES ('', '$gambar', '$sinopsis', '$file', '$judul')";
     mysqli_query($dbms, $queryy);
     return mysqli_affected_rows($dbms);
 }

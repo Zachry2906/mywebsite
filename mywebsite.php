@@ -176,7 +176,7 @@ if (isset($_POST["submit"])) {
             <?php $j = 1; ?>
             <?php foreach ($konten as $k) : ?>
               <div class="col-md-4 mb-3">
-              <a href="topik<?=$j?>.html" target="_blank">
+              <a href="<?=$k["file"];?>" target="_blank">
                 <div class="card">
                   <img src="img/<?=$k["gambar"];?>" class="card-img-top" alt="jendela4" />
                   <div class="card-body">

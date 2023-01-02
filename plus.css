@@ -17,11 +17,17 @@ body {
 }
 
 .tambah {
-  margin-top: 250px;
+  margin-top: 100px;
   border-radius: 10px;
-  color: white;
-  width: 400px;
-  height: 350px;
+  color: rgb(228, 228, 228);
+  width: 750px;
+  height: 80%;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 30px 40px 30px 30px;
+  position: absolute;
+}
+
+textarea {
+  border-radius: 5px;
+  text-align: left;
 }

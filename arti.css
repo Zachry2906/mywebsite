@@ -1,0 +1,10 @@
+.edit{
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.edit.active {
+  opacity: 1;
+  height: auto;
+}

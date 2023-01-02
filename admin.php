@@ -169,10 +169,10 @@ if (!isset($_SESSION['login'])) {
             <?php $j = 1; ?>
             <?php foreach ($konten as $k) : ?>
               <div class="col-md-4 mb-3">
-              <a href="topik<?=$j?>.html" target="_blank">
                 <div class="card">
                    <button style="z-index: index 1 ; position: fixed;" name="card" class="btn btn-secondary mb-3"><a href="hapus.php?card=<?=$k["id"];?>">hapus</a></button>
-                  <img src="img/<?=$k["gambar"];?>" class="card-img-top" alt="jendela4" />
+                   <a href="<?=$k["file"];?>" target="_blank">
+                   <img src="img/<?=$k["gambar"];?>" class="card-img-top" alt="jendela4" />
                   <div class="card-body">
                     <p style="position: relative; color:black;" class="card-text"><?= $k["sinopsis"]; ?></p>
                   </div>

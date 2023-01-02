@@ -18,6 +18,12 @@ if (isset($_POST["submit"])){
         ";
     }
 }
+
+if (isset($_POST["file"])){
+
+    require 'artikel.php';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +33,7 @@ if (isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="plu.css">
+    <link rel="stylesheet" href="plus.css">
     <title>Tambah</title>
 </head>
 <body>
@@ -44,6 +50,18 @@ if (isset($_POST["submit"])){
         <div class="form-group">
             <label for="formGroupExampleInput2">Gambar</label>
             <input name="gambar" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Nama File</label>
+            <input name="file" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Judul Konten</label>
+            <input name="judul" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Isi Artikel</label>
+            <textarea class="form-control" name="isi" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <br>
         <div class="form-group">
