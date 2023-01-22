@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
   <body>
     <div id="home"></div>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav1">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: grey; transition:0.3s ease-in" id="nav1">
       <div class="container">
         <a class="navbar-brand text-white" href="#"><img src="img/icon.png" width="20px" alt="logosaya" /> Zachry</a>
         <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -257,6 +257,7 @@ if (isset($_POST["submit"])) {
       </div>
       <!-- Footer -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
     </div>
   </body>
 </html>
