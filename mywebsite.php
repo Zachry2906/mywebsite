@@ -94,7 +94,7 @@ if (isset($_POST["submit"])) {
               <h2>About Me</h2>
             </div>
           </div>
-          <div class="row justify-content-center px-3 fs-6">
+          <div class="row justify-content-center px-2 fs-6">
             <div class="col-md-5 mb-3" style="text-align: justify">Nama saya Ahmad Zakaria biasa dipanggil Arya atau Zaka. Saya merupakan mahasiswa baru (2022) di salah satu perguruan tinggi negeri di Yogyakarta.</div>
             <div class="col-md-5" style="text-align: justify">
               Website ini merupakan website pertama saya yang sementara ini saya buat menggunakan, HTML, CSS, Bootstrap5, dan sedikit Javascript. Halaman web ini berisi mengenai hal-hal yang ingin saya simpan seperti bookmark, playlist,

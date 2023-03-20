@@ -2,11 +2,6 @@
 
 session_start();
 
-if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
-    exit;
-}
-
 require 'function.php';
 
 if (isset($_POST["submit"])){
@@ -70,6 +65,7 @@ if (isset($_POST["file"])){
         </ul>
     </form>
     </div>
+    <div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

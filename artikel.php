@@ -5,6 +5,7 @@ $file = $_POST["file"];
 $isi = $_POST["isi"];
 $judul  = $_POST["judul"];
 $gambar = $_POST["gambar"];
+$time = date("D, d M y");
 $txt =
 "
 <!DOCTYPE html>
@@ -64,9 +65,9 @@ $txt =
       <!-- HEADING -->
       <br /><br /><br />
       <div class=\"text-center px-2 text-white\">
-        <p class=\"text-white mb-1\">Published 7 September 2022</p>
+        <p class=\"text-white mb-1\">$time</p>
         <h1 class=\"mb-3 display-5\">$judul</h1>
-        <p class=\"text-white\">Published 7 September 2022</p>
+        <p class=\"text-white\">$time</p>
         <br />
       </div>
       <!-- Gambar -->

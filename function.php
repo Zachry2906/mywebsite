@@ -14,6 +14,7 @@ function query($query){
     return $rows;
 }
 
+//MENERIMA DATA DARI MYWEBSITE.PHP
 function tambah ($data){
     global $dbms;
 
@@ -26,6 +27,7 @@ function tambah ($data){
     return mysqli_affected_rows($dbms);
 }
 
+//MENERIMA DATA DARI TAMBAHARTIKEL
 function isi ($konten){
     global $dbms;
 
@@ -38,10 +40,13 @@ function isi ($konten){
     return mysqli_affected_rows($dbms);
 }
 
+//MENERIMA DATA DARI ADMIN
 function hapus ($id){
     global $dbms;
+    //MENGHAPUS KARTU PARAMETER CARD
     if(isset($_GET["card"])){
         mysqli_query($dbms, "DELETE FROM content WHERE id = $id");
+        //MENGHAPUS FEEDBACK PARAMETER ID
     } else {
         mysqli_query($dbms, "DELETE FROM form WHERE id = $id");
     }

@@ -170,7 +170,9 @@ if (!isset($_SESSION['login'])) {
             <?php foreach ($konten as $k) : ?>
               <div class="col-md-4 mb-3">
                 <div class="card">
+                  <!-- //MENGHAPUS DENGAN PARAMETER CARD -->
                    <button style="z-index: index 1 ; position: fixed;" name="card" class="btn btn-secondary mb-3"><a href="hapus.php?card=<?=$k["id"];?>">hapus</a></button>
+                   <!-- //MENGHAPUS DENGAN PARAMETER CARD -->
                    <a href="<?=$k["file"];?>" target="_blank">
                    <img src="img/<?=$k["gambar"];?>" class="card-img-top" alt="jendela4" />
                   <div class="card-body">
@@ -214,8 +216,10 @@ if (!isset($_SESSION['login'])) {
         <td><?= $d["name"]; ?></td>
         <td><?= $d["email"]; ?></td>
         <td><?= $d["pesan"]; ?></td>
-        <td>                
+        <td>
+        <!-- MENGHAPUS DENGAN PARAMETER ID                 -->
         <button type="button" class="btn btn-light btn-sm"><a href="hapus.php?id=<?=$d["id"];?>">hapus</a></button>
+        <!-- //MENGHAPUS DENGAN PARAMETER ID -->
         </td>
     </tr>
     <?php $i++; ?>
